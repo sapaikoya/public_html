@@ -16,7 +16,6 @@ var data = [
         cvv:'',
         fio:'',
         year:''
-
     },
     {
         "date": "16.05.2014",
@@ -68,8 +67,6 @@ $(document).ready(function(){
                var $row = $(this).parents('.items');
                data[$row.index()][$(this).attr('name')] = $(this).val();
                $table.html($temp.render(data));
-
-
            }
 
            function add() {
