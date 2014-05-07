@@ -67,12 +67,40 @@ $(document).ready(function(){
            function change (){
                var $row = $(this).parents('.items');
                data[$row.index()][$(this).attr('name')] = $(this).val();
+               $table.html($temp.render(data));
+
+
            }
 
-           $(this).html($($(this).attr('data-template')).render(data));
-           $(this).on('click','.glyphicon-eye-open', edit);
-           $(this).on('click','.glyphicon-eye-close', edit);
-           $(this).on("blur", "input", change);
+           function add() {
+               var d = new Date(),
+                   dd = (d.getDate()<10)?('0'+d.getDate()):d.getDate(),
+                   m = ((d.getMonth()+1)<10)?('0'+(d.getMonth()+1)):(d.getMonth()+1);
+               $.observable(data).insert({
+                   "date": dd+'.'+ m+'.'+ d.getFullYear(),
+                   "good": "",
+                   price:"",
+                   ncard:'',
+                   cvv:'',
+                   fio:'',
+                   year:''
+               });
+
+               $table.html($temp.render(data));
+               $table.find(':last-child  .glyphicon-eye-open').click();
+           }
+
+           var _ts = $(this),
+               $table = _ts.find('.b-table'),
+               $add = _ts.find('.add'),
+               $temp = $($table.attr('data-template'));
+
+           $table.html($temp.render(data));
+
+           $table.on('click','.glyphicon-eye-open', edit);
+           $table.on('click','.glyphicon-eye-close', edit);
+           $table.on("blur", "input", change);
+           $add.on("click", add);
        })
     }
     $('.edit-table').editTable(data);

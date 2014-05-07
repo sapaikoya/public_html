@@ -6375,6 +6375,10 @@ body {
   line-height: 1.5em;
 }
 
+.add {
+  margin-top: 1em;
+}
+
 .b-table .items {
   position: relative;
 }

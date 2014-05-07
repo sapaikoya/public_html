@@ -18,15 +18,15 @@
                 <div class="row item">
                     <div class="col-md-1 text-center"><i class="glyphicon glyphicon-eye-open show-descr"></i></div>
                     <div class="col-md-2 ">{{:date}}</div>
-                    <div class="col-md-8">{{:good}}</div>
+                    <div class="col-md-8">{{:good}} </div>
                     <div class="col-md-1">{{:price}}</div>
                 </div>
                 <div class="detail row">
                     <div class="row">
                         <div class="col-md-1 text-center"><i class="glyphicon glyphicon-eye-close show-descr"></i></div>
                         <div class="col-md-2 "><input type="text" class="form-control col-md-12" name="date" value="{{:date}}"/></div>
-                        <div class="col-md-8"><input type="text" class="form-control col-md-12" name="date" value="{{:good}}"/></div>
-                        <div class="col-md-1"><input type="text" class="form-control col-md-12" name="date" value="{{:price}}"/></div>
+                        <div class="col-md-8"><input type="text" class="form-control col-md-12"  name="good" value="{{:good}}"/></div>
+                        <div class="col-md-1"><input type="text" class="form-control col-md-12" name="price" value="{{:price}}"/></div>
                     </div>
                     <div class="row">
                         <div class="col-md-3"><input type="text" class="form-control col-md-12" name="ncard" value="{{:ncard}}" placeholder="номер карты" /></div>
@@ -38,11 +38,15 @@
           </div>
     </script>
     <div class="container">
-        <div class="b-table edit-table" data-template="#edit-table"></div>
+        <div class="edit-table">
+            <div class="b-table" data-template="#edit-table"></div>
+            <div class="btn-default btn add">Добавить</div>
+        </div>
     </div>
 
     <script src="js/jquery-1.10.1.min.js" type="text/javascript"></script>
     <script src="js/jsrender.min.js" type="text/javascript"></script>
+    <script src="js/jsviews.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
 </body>
