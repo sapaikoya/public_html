@@ -1,0 +1,32 @@
+body
+  font:
+    family: 'PT Sans', sans-serif
+    size: 14px
+  line-height: 1.5em
+
+.b-table
+  .items
+    position: relative
+  .item
+    border-bottom: 1px solid $border-color
+
+    &:nth-child(odd)
+      background: $bg-color-table
+  .row
+    padding: 1em
+    .show-descr
+      cursor: pointer
+
+  .detail
+    overflow: hidden
+    display: none
+    opacity: 1
+    background: $bg-color-table
+    border-bottom: 1px solid $border-color
+    &.row
+      padding-top: 0
+      padding-bottom: 0
+    input
+      margin-left: -13px
+    .row
+      padding: .5em 1em
